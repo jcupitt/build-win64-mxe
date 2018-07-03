@@ -14,7 +14,12 @@ RUN \
 # Install Wine to test the build
 RUN \
     apt-get install -y \
-         wine
+        wine
+
+# For a full build from the git sources, we'll need more packages
+RUN \
+    apt-get install -y \
+        gobject-introspection swig gtk-doc-tools 
 
 # Add Windows target for cross-compilation
 # TODO: Switch to i686-pc-windows-gnu if 32-bit is needed.
